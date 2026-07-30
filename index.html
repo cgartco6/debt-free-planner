@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Income-first debt payoff planner. Real numbers, real plan, no lectures. See exactly when your debt payments become savings." />
+  <meta name="theme-color" content="#0D1B2A" />
+
+  <title>DebtFree Planner — Your path from debt to wealth</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔓</text></svg>" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"
+    integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3oD+sCoJrzXJ+yKqtkiDlszkVArgh/veKHBd3iE8T83WiQiC+5HRQg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/dashboard.css" />
+
+  <style>
+    /* Initial loading state */
+    #app:empty::before {
+      content: '🔓';
+      font-size: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      animation: pulse 1.5s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Subtle number count-up animation for metric cards */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .metric-card { animation: slideUp 0.3s ease both; }
+    .metric-card:nth-child(1) { animation-delay: 0.05s; }
+    .metric-card:nth-child(2) { animation-delay: 0.10s; }
+    .metric-card:nth-child(3) { animation-delay: 0.15s; }
+    .metric-card:nth-child(4) { animation-delay: 0.20s; }
+
+    /* Phase detail slide-in */
+    .phase-detail { animation: slideUp 0.25s ease both; }
+
+    /* Liberation timeline fill animation */
+    .timeline-debt-phase { animation: expandWidth 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    @keyframes expandWidth {
+      from { width: 0% !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
