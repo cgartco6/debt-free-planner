@@ -1,0 +1,29 @@
+{
+  "name": "debt-free-planner",
+  "version": "1.0.0",
+  "description": "Income-first, phase-based debt payoff planner. Real numbers, real plan. Shows exactly when debt payments become savings.",
+  "private": true,
+  "scripts": {
+    "start": "npx serve . --listen 3000",
+    "dev":   "npx serve . --listen 3000 --no-clipboard",
+    "build": "echo 'No build step required — pure ES modules. Run npm start to serve.'",
+    "lint":  "npx eslint src/**/*.js"
+  },
+  "keywords": [
+    "debt",
+    "budget",
+    "finance",
+    "debt-free",
+    "avalanche",
+    "snowball",
+    "personal-finance"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
